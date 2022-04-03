@@ -9,7 +9,7 @@ import (
 
 type Daemon struct {
 	mtx          *sync.RWMutex      //мьютекс, используется для работы со списком точек доступа
-	params       *DaemonParams      //параметры cli
+	params       IDaemonParams      //параметры cli
 	ctx          context.Context    //корневой контекст
 	cancel       context.CancelFunc //функция завершения корневого контекста
 	accessPoints []*AccessPoint     //список точек доступа
@@ -18,7 +18,7 @@ type Daemon struct {
 	httpServer   *http.Server       //http-сервер
 }
 
-func NewDaemon(params *DaemonParams) *Daemon {
+func NewDaemon(params IDaemonParams) *Daemon {
 	//создаём инстанс структуры, сразу сохраняем в него параметры и мьютекс
 	daemon := &Daemon{params: params, mtx: &sync.RWMutex{}}
 	//создаём корневой контекст

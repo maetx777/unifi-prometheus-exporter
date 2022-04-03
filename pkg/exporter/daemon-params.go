@@ -9,7 +9,7 @@ type DaemonParams struct {
 	context *cli.Context
 }
 
-func NewDaemonParams(context *cli.Context) *DaemonParams {
+func NewDaemonParams(context *cli.Context) IDaemonParams {
 	return &DaemonParams{context: context}
 }
 
