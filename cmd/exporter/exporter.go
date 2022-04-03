@@ -15,19 +15,19 @@ func main() {
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:     "controller-login",
-				Usage:    `логин от exporter-контроллера`,
+				Usage:    `логин от unifi-контроллера`,
 				EnvVars:  []string{`CONTROLLER_LOGIN`},
 				Required: true,
 			},
 			&cli.StringFlag{
 				Name:     "controller-password",
-				Usage:    `пароль от exporter-контроллера`,
+				Usage:    `пароль от unifi-контроллера`,
 				EnvVars:  []string{`CONTROLLER_PASSWORD`},
 				Required: true,
 			},
 			&cli.StringFlag{
 				Name:    "controller-address",
-				Usage:   `адрес exporter-контроллера`,
+				Usage:   `адрес unifi-контроллера`,
 				EnvVars: []string{`CONTROLLER_ADDRESS`},
 				Value:   `https://127.0.0.1:8443`,
 			},
