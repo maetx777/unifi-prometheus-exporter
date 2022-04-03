@@ -1,3 +1,5 @@
+Пост на habr.com - https://habr.com/ru/post/658863/
+
 ```
 NAME:
    exporter - экспортер snmp-метрик от точек доступа unifi
