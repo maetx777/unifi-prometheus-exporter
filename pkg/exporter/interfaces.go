@@ -1,6 +1,10 @@
 package exporter
 
-import "time"
+import (
+	"bytes"
+	"net/http"
+	"time"
+)
 
 type IDaemonParams interface {
 	ControllerLogin() string
@@ -11,4 +15,13 @@ type IDaemonParams interface {
 	PollTimeout() time.Duration
 	ListenPort() int
 	Parallel() int
+}
+
+type IUnifiClient interface {
+	Authorize() (*http.Response, error)
+	GetAccessPointsList() (*http.Response, []*AccessPoint, error)
+}
+
+type ISnmpExporterClient interface {
+	GetMetrics(ap *AccessPoint) (*http.Response, *bytes.Buffer, error)
 }

@@ -1,7 +1,6 @@
 package exporter
 
 import (
-	"bytes"
 	"context"
 	"errors"
 	"fmt"
@@ -11,11 +10,6 @@ import (
 	"net/http"
 	"sync"
 )
-
-type PollResult struct {
-	AP   *AccessPoint
-	Data *bytes.Buffer
-}
 
 func (daemon *Daemon) SetupHttpServer() {
 	//настраиваем http-сервер
